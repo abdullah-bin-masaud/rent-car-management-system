@@ -29,4 +29,4 @@
 ## Live Demo
 (Deployed on Infinity Free)
 https://rentacarmanagement.lovestoblog.com/
-Note:If link gave security error use chrome icognito mode.
+Note:If link show security page tab (detail) and choose ( Only visit this unsafe site if you're sure you understand the risks.).
