@@ -1,0 +1,40 @@
+//Database Create
+CREATE DATABASE rent_car_db;
+USE rent_car_db;
+
+//Admin
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin','customer') DEFAULT 'customer',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+//Car Table
+CREATE TABLE cars (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    car_name VARCHAR(100) NOT NULL,
+    brand VARCHAR(100),
+    model VARCHAR(50),
+    price_per_day INT NOT NULL,
+    status ENUM('available','booked') DEFAULT 'available',
+    image VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+//Booking Table
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    car_id INT,
+    start_date DATE,
+    end_date DATE,
+    total_price INT,
+    status ENUM('pending','approved','completed','cancelled') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (car_id) REFERENCES cars(id)
+);
