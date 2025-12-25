@@ -1,3 +1,4 @@
+http://localhost/phpmyadmin
 //Database Create
 CREATE DATABASE rent_car_db;
 USE rent_car_db;
