@@ -21,7 +21,7 @@
 3. Import database from /database/rent_car_db.sql
 4. Start Apache & MySQL
 5. Open browser and visit:
-   http://localhost/rent_car
+   http://localhost/CEP
 
 ## Live Demo
 (Deployed on 000webhost)
